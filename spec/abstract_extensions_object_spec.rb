@@ -2,6 +2,7 @@ describe 'Abstract::Extensions::Object module' do
   before do
     Object.include Abstract::Extensions::Object
   end
+
   context '.blank?' do
     context 'when self = String.new' do
       it 'String.new.blank? expected to be true' do
