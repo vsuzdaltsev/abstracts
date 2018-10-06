@@ -17,9 +17,9 @@ describe 'Abstract::Object class' do
       expect(Foo.new.attrs).to eq %i[foo bar]
     end
   end
-  
+
   context 'subclass' do
-    it 'expected to respond to each of attr_accessor methods preset via @attrs variable' do
+    it 'expected to respond to each of attr_accessors preset via @attrs' do
       Foo.new.attrs.each do |attr_accessor|
         expect(Foo.new.respond_to?(attr_accessor)).to eq true
         expect(Foo.new.respond_to?("#{attr_accessor}=")).to eq true
