@@ -20,4 +20,12 @@ describe 'Abstract::Builder class' do
       expect(FooBuilder.build).to be_an_instance_of FooObject
     end
   end
+
+  context 'subclass.new' do
+    it 'expected to return object which responds to attr_writers defined by @attrs' do
+      FooObject.new.attrs.each do |attr|
+        expect(FooBuilder.new('FooObject').respond_to?("#{attr}=")).to eq true
+      end
+    end
+  end
 end

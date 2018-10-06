@@ -44,7 +44,7 @@ module Abstract
 
     # Define attribute writers to Abstract::Builder instance according to
     #   existing accessors of Abstract::Object instance
-    # @param object [Abstract::Object] - Abstract::Object instance
+    # @param object [String] - Abstract::Object.class.name
     # @return [Abstract::Builder] - builder object
     def initialize(object)
       @object = Class.const_get(object).new
