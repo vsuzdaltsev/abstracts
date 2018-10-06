@@ -12,7 +12,7 @@ describe 'Abstract::Object class' do
   end
 
   context 'subclass' do
-    it 'expected to respond to :attrs and return preset list of attrs' do
+    it 'expected to respond to :attrs and return list of attrs preset via @attrs' do
       expect(Foo.new.respond_to?(:attrs)).to eq true
       expect(Foo.new.attrs).to eq %i[foo bar]
     end
