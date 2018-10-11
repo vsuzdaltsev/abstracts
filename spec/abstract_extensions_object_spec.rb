@@ -51,5 +51,11 @@ describe 'Abstract::Extensions::Object module' do
         expect(String.blank?).to eq false
       end
     end
+
+    context 'when self = nil' do
+      it 'nil.blank? expected to be true' do
+        expect(nil.blank?).to eq true
+      end
+    end
   end
 end
