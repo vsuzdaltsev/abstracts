@@ -14,6 +14,14 @@ module Abstract
         end
         false
       end
+
+      # Add default proc to Hash
+      # @return [Hash] - Hash with default proc
+      def default_hash
+        Hash.new do |hash, key|
+          hash[key] = Hash.new(&hash.default_proc)
+        end
+      end
     end
   end
 
