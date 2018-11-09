@@ -43,7 +43,7 @@ module Abstract
     attr_reader :object
 
     # Create an instance of Abstract::Object class and yield block to it
-    # @return @object [AbstractObject] - Abstract::Object class instance
+    # @return [AbstractObject] - Abstract::Object class instance
     def self.build
       builder = new(@build_class)
       yield builder if block_given?
