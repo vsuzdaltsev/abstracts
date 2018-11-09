@@ -58,4 +58,17 @@ describe 'Abstract::Extensions::Object module' do
       end
     end
   end
+
+  context '.default_hash' do
+    context '' do
+      before do
+        @hash_with_default_values = default_hash
+        @hash_with_default_values['foo']['bar'] = 'baz'
+      end
+
+      it 'non-existent keys expected to be created' do
+        expect(@hash_with_default_values).to eq 'foo' => { 'bar' => 'baz' }
+      end
+    end
+  end
 end
