@@ -7,12 +7,7 @@ module Abstract
       # Check if object is blank
       # @return [Trueclass, FalseClass] - is object nil or empty
       def blank?
-        begin
-          return true if nil? || empty?
-        rescue StandardError
-          false
-        end
-        false
+        respond_to?(:empty?) && empty? || !self
       end
 
       # Add default proc to Hash
