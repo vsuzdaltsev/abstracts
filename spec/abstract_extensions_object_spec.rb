@@ -60,7 +60,7 @@ describe 'Abstract::Extensions::Object module' do
   end
 
   context '.default_hash' do
-    context '' do
+    context 'when trying to get values by nonexistent keys' do
       before do
         @hash_with_default_values = default_hash
         @hash_with_default_values['foo']['bar'] = 'baz'
